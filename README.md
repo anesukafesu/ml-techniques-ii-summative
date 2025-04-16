@@ -31,7 +31,15 @@ The environment was implemented using gymnasium inside the [environment/custom_e
 
 # Visualisation
 
-There are two visualisations available–
+There are two visualisations available–environment visualisation and the agent visualisation.
+
+## Environment Visualisation
+
+Here's a [link](https://drive.google.com/file/d/1nOQvjDJlaFHG_eKbr9D3C_lFdkyfbd3f/view?usp=sharing) to a video to help you visualise the environment.
+
+## Agent visualisation
+
+This visualisation enables you to see the DQN agent in action. The video demo is available [here](https://drive.google.com/file/d/1Rf_iI58ogCdlyxBXFubH2eamBzAWwvJe/view?usp=drive_link). You can also use a live version of the application [here](https://ml-techniques-ii-summative-git-main-anesukafesus-projects.vercel.app/).
 
 ## Project Structure
 
@@ -39,48 +47,22 @@ There are two visualisations available–
 
 Contains the custom environment implementation.
 
-- **`custom_env.py`**: Defines the `Environment` class, which models the recommendation system. Key methods include:
-  - `reset`: Resets the environment and initializes a random current listing.
-  - `step`: Processes user actions and updates the environment state.
-  - `_simulate_user_response`: Simulates user decisions based on listing attributes.
-  - `_get_obs`: Returns the current observation (current listing and available listings).
-  - `_get_info`: Provides additional information about the environment state.
-
 ### 2. `common/`
 
 Contains shared utilities and data.
-
-- **`listings.py`**: Defines the housing listings dataset and preprocessing steps. Key components include:
-  - `listings_data`: A list of dictionaries representing housing listings.
-  - `listings_df`: A Pandas DataFrame created from `listings_data`.
-  - `column_name_to_index`: A mapping of column names to their indices in the dataset, used for vectorized operations.
 
 ### 3. `README.md`
 
 This file provides an overview of the project.
 
-## How It Works
+### 4. `models/`
 
-1. **Dataset**: The dataset consists of housing listings with attributes such as `offering_type`, `n_beds`, `price`, `latitude`, `longitude`, and `property_type`. Categorical columns are one-hot encoded for compatibility with the environment.
+Contains the models used by the DQN and policy gradient agents.
 
-2. **Environment Initialization**:
+### 5. `visualisations/`
 
-   - The environment is initialized with a `current_listing` and a list of `available_listings`.
-   - Observation space includes the current listing and all available listings.
-   - Action space allows selecting any listing as a recommendation.
+Contains code to generate the visualisations.
 
-3. **User Simulation**:
+### 6. `training`
 
-   - The `_simulate_user_response` method evaluates a recommendation based on predefined rules:
-     - Matching `offering_type`.
-     - Number of bedrooms.
-     - Price thresholds (e.g., 10-20% above the current listing price).
-
-4. **Rewards**:
-
-   - Positive rewards for user engagement (e.g., clicks).
-   - Negative rewards for ignored recommendations.
-
-5. **Reset and Step**:
-   - The `reset` method initializes the environment with a random current listing.
-   - The `step` method processes user actions, updates the state, and returns the next observation, reward, and done flag.
+Contains the training code for the DQN and policy gradient agents.
