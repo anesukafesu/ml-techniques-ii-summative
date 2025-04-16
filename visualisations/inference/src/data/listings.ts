@@ -2765,13 +2765,13 @@ export const listings = [
 
 export interface Listing {
   offering_type: string;
-  n_beds: Number;
-  n_baths: Number;
-  price: Number;
-  latitude: Number;
-  longitude: Number;
+  n_beds: number;
+  n_baths: number;
+  price: number;
+  latitude: number;
+  longitude: number;
   property_type: string;
-  area: Number;
+  area: number;
 }
 
 const categoricalColumnsMap = {

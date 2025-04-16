@@ -20,13 +20,18 @@ Each listing is also an action. Action one would mean recommending listing one.
 T
 The system uses a custom environment built with the `gymnasium` library to model the recommendation process and simulate user responses.
 
-## Features
+## Environment implementation
 
-- **Custom Environment**: A custom environment is implemented to simulate the recommendation process, including user interactions and decision-making.
-- **Dynamic Action and Observation Spaces**: The environment defines observation and action spaces based on the housing listings dataset.
-- **User Behavior Simulation**: Simulates user responses to recommendations based on predefined rules and thresholds.
-- **Categorical Encoding**: Encodes categorical features like `offering_type` and `property_type` for machine learning compatibility.
-- **Reward System**: Implements a reward system to evaluate the effectiveness of recommendations.
+The environment was implemented using gymnasium inside the [environment/custom_env.py](environment/custom_env.py) file. It uses simulated user behaviour to simulate how real-world users might have responded to the suggestions made by the agent.
+
+# Agent Implementation
+
+- Two agents were implemented, one using a DQN and the other using policy gradient methods.
+- The DQN agent performed better and was used in the visualisation.
+
+# Visualisation
+
+There are two visualisations available–
 
 ## Project Structure
 

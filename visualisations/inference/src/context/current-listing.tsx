@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useState, Dispatch, SetStateAction } from "react";
+import { createContext, Dispatch, SetStateAction } from "react";
 
 export const CurrentListingContext = createContext<{
   currentListingIndex: number;
