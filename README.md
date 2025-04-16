@@ -79,11 +79,3 @@ This file provides an overview of the project.
 5. **Reset and Step**:
    - The `reset` method initializes the environment with a random current listing.
    - The `step` method processes user actions, updates the state, and returns the next observation, reward, and done flag.
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/housing_platform_recommendation.git
-   cd housing_platform_recommendation
-   ```
